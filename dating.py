@@ -6,6 +6,9 @@
 # and displays whether they are eligible to date
 # some grandparents' grandchild.
 
+import constants
+
+
 def main():
     try:
         # get the user's age
@@ -18,9 +21,10 @@ def main():
 
     else:
         # display whether they are eligible to date or not
-        if user_age_as_int > 25 and user_age_as_int < 40:
+        if user_age_as_int > constants.MIN_AGE and\
+                user_age_as_int < constants.MAX_AGE:
             print("You are allowed to date our grandchild.")
-        elif user_age_as_int > 40:
+        elif user_age_as_int >= constants.MAX_AGE:
             print("You are too old for our grandchild.")
         elif user_age_as_int < 0:
             print("Age cannot be a negative number.")
